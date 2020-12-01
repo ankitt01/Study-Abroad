@@ -77,6 +77,7 @@ nav {
     font-size: 25px;
     margin: 0 auto 0 auto;
     line-height: 0.7;
+    cursor: pointer;
 }
 .logo::after {
     content: 'study abroad';
@@ -89,6 +90,7 @@ nav {
 }
 .cta {
     background-color: #fff;
+    width: 100px;
     margin-right: 1rem;
     padding: 7px 10px;
     color: white;
@@ -138,18 +140,23 @@ nav {
     opacity: 1;
 }
 
-@media screen and (max-width: 1000px){
-    /* .link {
-        display: none;
-    } */
+
+@media screen and (max-width: 990px){
+    .logo {
+        /* margin: 0; */
+    }
+    .cta {
+        /* width: 150px; */
+        /* margin-right: 0.5rem; */
+    }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 990px) {
     .bars {
         display: none;
     }
     .logo {
-        margin-left: 50px;
+        /* margin-left: 0px; */
     }
     .link a {
         color: black;
@@ -163,7 +170,6 @@ nav {
         display: grid;
         grid-template-columns: repeat(5,1fr);
         width: 50%;
-        background-color: pink;
         text-align: center;
         padding: 10px 0;
         overflow: hidden;
