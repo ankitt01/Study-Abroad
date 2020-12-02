@@ -19,9 +19,9 @@ a {
 nav {
     font-family: 'Lato', sans-serif;
     background-color: #fff;
-    z-index: 99;
+    /* z-index: 99; */
     width: 100vw;
-    position: fixed;
+    /* position: fixed; */
     top: 0;
 }
 .nav-container {
@@ -111,21 +111,31 @@ nav {
 .nav-links {
     list-style: none;
     position: absolute;
+    padding-bottom: 40vh;
+    z-index: 99;
     top: 100%;
     left: 0;
-    width: 30vw;
-    opacity: 0;
+    height: 90vh;
+    /* width: 30vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* opacity: 0.5; */
     background-color: #717CFF;
 
-    transform: scale(0,0);
+    /* transform: scale(0,0); */
+    transform: translateX(-100%);
     transition: all 250ms;
 }
 .link {
+    font-size: 25px;
     padding: 10px;
     color: white;
+    margin-right: 20px;
+    /* background-color: #5260fa; */
     position: relative;
 }
-.link::after {
+.link a::after {
     content: '';
     width: 0%;
     height: 3px;
@@ -135,8 +145,8 @@ nav {
     left: 10px;
     transition: 250ms;
 }
-.link:hover::after {
-    width: 30%;
+.link a:hover::after {
+    width: 90%;
 }
 .link a {
     text-decoration: none;
@@ -144,17 +154,15 @@ nav {
 }
 .nav-link-active {
     transform: scale(1,1);
-    opacity: 1;
+    opacity: 01;
 }
 /* Navigation Ends */
 
+/* Hero Section */
 
 .hero-section {
-    height: 80vh;
-    overflow: hidden;
 }
 .title {
-    height: 50%;
     padding: 3rem;
 }
 .title span {
@@ -169,7 +177,7 @@ nav {
 .sub-headline {
     font-family: 'Lato', sans-serif;
     font-size: 20px;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     color: #414142;
 }
 .cta2 {
@@ -183,26 +191,24 @@ nav {
     content: '\f0a4';
     font-family: FontAwesome;
     margin-left: 15px;
-    animation: move 750ms ease-out infinite;
-    /* transition: 250ms ease; */
+    animation: move 750ms linear infinite;
 }
 .image {
     text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
     overflow: hidden;
 }
 .image img {
-    /* margin-top: 50px; */
-    width: 80%;
-}
-.svg {
-    height: 50%;
+    height: 100%;
+    width: 100%;
 }
 .social-links {
     width: 100px;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    margin: 2rem 0;
+    margin-top: 2rem;
 }
 .social-links i {
     padding: 7px;
@@ -234,15 +240,17 @@ nav {
 .social-links i:nth-of-type(3):hover {
     background-color: #00acee;
 }
+/* Hero section ends */
 
 /* Cards */
+
 .cards-section {
     background-color: rgb(253, 245, 245);
     padding: 50px 0;
 }
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(325px,1fr));
     grid-gap: 40px;
     width: 80%;
     margin: 0 auto;
@@ -252,9 +260,12 @@ nav {
     background-color: #fff;
     padding: 2rem;
     position: relative;
+    transition: 250ms ease;
+}
+.card:hover {
+    transform: translateY(-20px);
 }
 .card img {
-    /* background-color: #717cff; */
     border-radius: 50%;
     padding: 0 1rem 1rem 1rem;
     margin-bottom: 10px;
@@ -280,6 +291,7 @@ nav {
     margin-bottom: 10px;
     font-size: 15px;
     line-height: 1.4;
+    color: #707070;
 }
 .learn {
     position: relative;
@@ -303,20 +315,38 @@ nav {
         margin-left: 15px;
     }
     25% {
-        margin-left: 15px;
+        margin-left: 17px;
+    }
+    50% {
+        margin-left: 20px;
     }
     75% {
-        margin-left: 10px;
+        margin-left: 17px;
     }
     100% {
         margin-left: 15px;
     }
 }
-@media screen and (min-width: 990px){
-    
+
+
+@media screen and (min-width: 768px) {
+    .hero-section {
+        width: 75%;
+        margin: 0 auto;
+    }
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1000px) {
+    .hero-section {
+        /* height: 54vh; */
+        margin: 50px auto 50px auto;
+        display: grid;
+        width: 75%;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+    .headline {
+        font-size: 3rem;
+    }
     .bars {
         display: none;
     }
@@ -350,10 +380,16 @@ nav {
         width: 100%;
     }
     .cta {
-        margin-right: 1rem;
+        margin-right: 3rem;
         width: 150px;
         cursor: pointer;
     } 
+}
+
+/* 
+@media screen and (min-width: 990px) {
+    
+    
 
 
 
@@ -377,4 +413,4 @@ nav {
         height: 30%;
     }
 
-}
+} */
