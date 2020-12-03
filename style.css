@@ -267,10 +267,11 @@ nav {
     background-color: #fff;
     padding: 2rem;
     position: relative;
-    transition: 250ms ease;
+    transition: 500ms ease;
+    cursor: pointer;
 }
 .card:hover {
-    transform: translateY(-20px);
+    transform: scale(1.02);
 }
 .card img {
     border-radius: 50%;
@@ -287,6 +288,22 @@ nav {
     left: 0;
     height: 30%;
     background-color: rgb(235, 232, 232);
+}
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    box-shadow: 0px 0.125rem 0.25rem 0px rgba(0,0,0,0.3)
+}
+.card:hover::after {
+    opacity: 1;
+    box-shadow: 0px 0.2rem 0.75rem -.25em rgba(0,0,0,0.3)
 }
 .head {
     font-family: 'Lato', sans-serif;
@@ -343,12 +360,32 @@ nav {
  
 .tiles {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(344px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px,1fr));
     grid-gap: 20px;
 }
 .tile {
     max-width: 400px;
     margin: 0 auto;
+    padding-top: 1.7rem;
+    position: relative;
+    background-color: #fff;
+    cursor: pointer;
+}
+.tile::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    z-index: -2;
+    transition: opacity 500ms ease, box-shadow 500ms ease;
+    box-shadow: 0px 0.125rem 0.25rem 0px rgba(0,0,0,0.1)
+}
+.tile:hover::after {
+    opacity: 1;
+    box-shadow: 0px 0.2rem 0.75rem -.25em rgba(0,0,0,0.3)
 }
 .tile svg {
     width: 100%;
@@ -365,7 +402,7 @@ nav {
     margin-bottom: 10px;
 }
 .details p::before {
-    content: '\f073';
+    content: '\f133';
     font-family: FontAwsome;
     margin-right: 10px;
 }
