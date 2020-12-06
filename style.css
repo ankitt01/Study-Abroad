@@ -151,6 +151,7 @@ nav {
 .link a {
     text-decoration: none;
     color: white;
+    font-family: 'Lato';
 }
 .nav-link-active {
     transform: scale(1,1);
@@ -213,30 +214,27 @@ nav {
 .social-links i {
     padding: 7px;
     border: none;
-    border-radius: 10px;
+    border-radius: 50%;
     transition: 0.25s;
     margin-right: 10px;
+    font-size: 12px;
+    color: white;
 }
 .social-links i:nth-of-type(1) {
     /* color: #fd5949; */
-    color: white;
+    /* color: white; */
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 }
 .social-links i:nth-of-type(2) {
     padding: 7px 10px;
     background-color: #3b5998;
     /* color: #3b5998; */
-    color: white;
+    /* color: white; */
 }
 .social-links i:nth-of-type(3) {
     /* color: #00acee; */
     background-color: #00acee;
-    color: white;
-}
-.social-links i:hover {
-    border-radius: 50%;
-    transition: 0.25s;
-    color: white;
+    /* color: white; */
 }
 /* .social-links i:nth-of-type(1):hover {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
@@ -249,10 +247,12 @@ nav {
 } */
 /* Hero section ends */
 
+
+
 /* Cards */
 
 .cards-section {
-    background-color: rgb(253, 245, 245);
+    background-color: rgb(241, 241, 241);
     padding: 50px 0;
 }
 .cards {
@@ -332,30 +332,31 @@ nav {
 
 .news-section {
     width: 90%;
-    margin: 50px auto;
+    margin: 100px auto;
 }
-.news-section .head {
+.head {
     text-align: center;
 }
-.news-section .head h1 {
+.head h1 {
     font-family: 'Lato', sans-serif;
     margin-bottom: 50px;
     position: relative;
+    display: inline;
 }
-.news-section .head h1::after {
+.head h1::before {
     content: '';
     position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10%;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: 20px;
     height: 5px;
     background-color: #285AEB;
 }
-.news-section .head p {
+ .head p {
     color: #414142;
     line-height: 1.4;
-    margin-bottom: 50px;
+    margin: 50px auto;
 }
  
 .tiles {
@@ -408,6 +409,7 @@ nav {
 }
 .join {
     text-align: center;
+    margin-top: 20px;
 }
 .join a {
     background-color: #717cff;
@@ -424,7 +426,86 @@ nav {
     color: white;
 }
 
+/* Events Section */
 
+.events-container {
+    background-color: rgb(241, 241, 241);
+    margin: 50px auto;
+    padding: 50px 10px;
+    margin-bottom: 0;
+}
+.events-container .head p {
+    margin: 50px auto;
+}
+
+.calendar-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px,1fr));
+    grid-gap: 20px;
+}
+.c-tile {
+    padding: 2em;
+    font-family: 'Lato';
+    background-color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 250ms;
+}
+.c-tile:hover {
+    transform: Scale(1.02);
+    box-shadow: 0px 0.2rem 0.75rem -.25em rgba(0,0,0,0.3)
+}
+.t-head {
+    display: flex; 
+    margin-bottom: 1em;
+}
+.t-head h1 {
+    font-size: 25px
+}
+
+.c-tile p {
+    line-height: 1.4;
+    color: #414142;
+}
+.date {
+    background-color: #c0c5fd;
+    border-radius: 12px;
+    margin-right: 1em;
+    width: 100px;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.date p {
+    color: #285AEB;
+}
+.date p:nth-of-type(1) {
+    font-weight: 900;
+    font-size: 20px;
+}
+.t-tail {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+.time {
+    font-weight: 500;
+}
+.time i {
+    margin-right: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* background-color: #89a6ff; */
+    background-color: #000;
+    height: 40px;
+}
 @keyframes move {
     0%{
         margin-left: 15px;
@@ -453,6 +534,7 @@ nav {
         width: 90%;
         margin: 0 auto;
     }
+
 }
 
 @media screen and (min-width: 1000px) {
@@ -476,6 +558,7 @@ nav {
     .link a {
         color: black;
         position: relative;
+        font-family: "Lato";
     }
     .link {
         all:unset;
@@ -508,9 +591,20 @@ nav {
         cursor: pointer;
     } 
     .tiles {
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
     .join {
         margin: 0 auto;
+    }
+    .calendar-tiles {
+        width: 70%;
+        margin: auto;
+        grid-gap: 30px;
+    }
+    .head h1 {
+        font-size: 35px;
+    }
+    .head p {
+        font-size: 18px;
     }
 }
