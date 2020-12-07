@@ -3,11 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
 html {
     scroll-behavior: smooth;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 * {
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     box-sizing: border-box;
 }
 a {
@@ -161,8 +161,7 @@ nav {
 
 /* Hero Section */
 
-/* .hero-section {
-} */
+
 .title {
     padding: 3rem;
 }
@@ -252,6 +251,7 @@ nav {
 /* Cards */
 
 .cards-section {
+    width: 100vw;
     background-color: rgb(246, 246, 246);
     padding: 50px 0;
 }
