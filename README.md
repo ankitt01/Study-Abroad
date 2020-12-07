@@ -1,3 +1,4 @@
 # Study-Abroad <br>
-In progress
-Landing Page
+
+Landing Page <br>
+https://ankitt01.github.io/Study-Abroad/
