@@ -252,7 +252,7 @@ nav {
 /* Cards */
 
 .cards-section {
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(246, 246, 246);
     padding: 50px 0;
 }
 .cards {
@@ -287,7 +287,7 @@ nav {
     right: 0;
     left: 0;
     height: 30%;
-    background-color: rgb(235, 232, 232);
+    /* background-color: rgb(235, 232, 232); */
 }
 .card::after {
     content: '';
@@ -357,6 +357,7 @@ nav {
     color: #414142;
     line-height: 1.4;
     margin: 50px auto;
+    max-width: 700px;
 }
  
 .tiles {
@@ -434,7 +435,7 @@ nav {
 /* Events Section */
 
 .events-container {
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(246, 246, 246);
     margin: 50px auto;
     padding: 50px 10px;
     margin-bottom: 0;
@@ -511,6 +512,48 @@ footer {
     background-color: #000;
     height: 40px;
 }
+
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-20%);
+    transition: all 250ms ease-in;
+}
+.fade-in-left.appear {
+    transform: translateX(0);
+    opacity: 1;
+}
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(20%);
+    transition: all 250ms ease-in;
+}
+.fade-in-right.appear {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+[data-scroll] {
+    transition: all 500ms
+}
+
+[data-scroll = "in"] {
+    opacity: 1;
+    transform: translateY(0)
+}
+[data-scroll = "out"] {
+    opacity: 0;
+    transform: translateY(200px)
+}
+[data-scroll-dir-x = "in"] {
+    opacity: 1;
+    transform: translateX(200px)
+}
+[data-scroll-dir-x = "out"] {
+    opacity: 0;
+    transform: translateX(200px)
+}
+
 @keyframes move {
     0%{
         margin-left: 15px;
@@ -545,7 +588,7 @@ footer {
 @media screen and (min-width: 1000px) {
     .hero-section {
         /* height: 54vh; */
-        margin: 50px auto 50px auto;
+        margin: 150px auto 150px auto;
         display: grid;
         width: 90%;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

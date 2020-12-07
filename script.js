@@ -19,3 +19,23 @@ bars.addEventListener('click', function() {
     // navLinks.style.display = "block"
     navLinks.classList.toggle('nav-link-active')
 })
+
+
+const fadersLeft = document.querySelectorAll('.fade-in-left')
+const fadersRight = document.querySelectorAll('.fade-in-right')
+const title = document.querySelector('.title')
+
+window.onload = () => {
+    fadersLeft.forEach(fader => {
+        fader.classList.add('appear');
+    })
+    fadersRight.forEach(fader => {
+        fader.classList.add('appear');
+    })
+    // title.classList.add('appear');
+
+}
+
+ScrollOut({
+    once: true
+});
