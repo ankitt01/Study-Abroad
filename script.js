@@ -6,7 +6,10 @@ const bar3 = document.querySelector('.bar3')
 const links = document.querySelectorAll('.link')
 links.forEach(link => {
     link.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-link-active')
+        navLinks.classList.remove('nav-link-active')
+        bar1.classList.remove('animate1');
+        bar2.style.display = "block"
+    bar3.classList.remove('animate2');
     })
 })
 
