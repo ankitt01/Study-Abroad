@@ -5,10 +5,14 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+body {
+    overflow: hidden !important;
+}
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    outline: none;
 }
 a {
     text-decoration: none;
@@ -19,9 +23,9 @@ a {
 nav {
     font-family: 'Lato', sans-serif;
     background-color: #fff;
-    /* z-index: 99; */
+    z-index: 99;
     width: 100vw;
-    /* position: fixed; */
+    position: fixed;
     top: 0;
 }
 .nav-container {
@@ -99,7 +103,6 @@ nav {
 .cta {
     background-color: #fff;
     width: 100px;
-    margin-right: 1rem;
     padding: 7px 10px;
     color: white;
     border: none;
@@ -132,7 +135,6 @@ nav {
     padding: 10px;
     color: white;
     margin-right: 20px;
-    /* background-color: #5260fa; */
     position: relative;
 }
 .link a::after {
@@ -161,9 +163,12 @@ nav {
 
 /* Hero Section */
 
+.hero-section {
+    margin-top: 50px;
+}
 
 .title {
-    padding: 3rem;
+    padding: 3rem 1rem;
 }
 .title span {
     color: #717CFF;
@@ -244,6 +249,7 @@ nav {
 .social-links i:nth-of-type(3):hover {
     background-color: #00acee;
 } */
+
 /* Hero section ends */
 
 
@@ -253,15 +259,14 @@ nav {
 .cards-section {
     width: 100vw;
     background-color: rgb(246, 246, 246);
-    padding: 50px 0;
+    padding: 50px 10px;
 }
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(325px,1fr));
-    grid-gap: 40px;
-    width: 80%;
+    grid-gap: 30px;
     margin: 0 auto;
-
+    padding: 0 10px;
 }
 .card {
     background-color: #fff;
@@ -280,6 +285,9 @@ nav {
     position: relative;
     z-index: 9;
 }
+.card .head  {
+    text-align: left;
+}
 .card::before {
     content: '';
     position: absolute;
@@ -287,7 +295,6 @@ nav {
     right: 0;
     left: 0;
     height: 30%;
-    /* background-color: rgb(235, 232, 232); */
 }
 .card::after {
     content: '';
@@ -331,8 +338,7 @@ nav {
 }
 
 .news-section {
-    width: 90%;
-    margin: 100px auto;
+    margin: 100px 10px;
 }
 .head {
     text-align: center;
@@ -357,12 +363,10 @@ nav {
     color: #414142;
     line-height: 1.4;
     margin: 50px auto;
-    max-width: 700px;
 }
  
 .tiles {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     grid-gap: 20px;
 }
 .tile {
@@ -373,6 +377,9 @@ nav {
     background-color: #fff;
     cursor: pointer;
     transition: all 250ms;
+}
+.tile img {
+    width: 100%;
 }
 .tile::after {
     content: '';
@@ -446,7 +453,6 @@ nav {
 
 .calendar-tiles {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px,1fr));
     grid-gap: 20px;
 }
 .c-tile {
@@ -466,7 +472,7 @@ nav {
     margin-bottom: 1em;
 }
 .t-head h1 {
-    font-size: 25px
+    font-size: 22px
 }
 
 .c-tile p {
@@ -508,7 +514,6 @@ footer {
     justify-content: center;
     align-items: center;
     color: white;
-    /* background-color: #89a6ff; */
     background-color: #000;
     height: 40px;
 }
@@ -576,18 +581,35 @@ footer {
 @media screen and (min-width: 768px) {
     .hero-section {
         width: 75%;
-        margin: 0 auto;
+        margin: 100px auto;
     }
+    .cta {
+        margin-right: 1rem;
+    }
+   
     .tiles {
         width: 90%;
         margin: 0 auto;
+        grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+    }
+    .calendar-tiles {
+        grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+    }
+    .news-section {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .head p {
+        max-width: 700px;
+    }
+    .cards-section {
+        padding: 2rem;
     }
 
 }
 
 @media screen and (min-width: 1000px) {
     .hero-section {
-        /* height: 54vh; */
         margin: 150px auto 150px auto;
         display: grid;
         width: 90%;
@@ -638,9 +660,7 @@ footer {
         width: 150px;
         cursor: pointer;
     } 
-    .tiles {
-        margin-bottom: 50px;
-    }
+    
     .join {
         margin: 0 auto;
     }
@@ -648,6 +668,7 @@ footer {
         width: 70%;
         margin: auto;
         grid-gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(450px,1fr));
     }
     .head h1 {
         font-size: 35px;
