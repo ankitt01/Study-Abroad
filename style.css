@@ -19,6 +19,11 @@ a {
 }
 
 /* Navigation */
+.main-cont {
+    background: rgb(146,140,255);
+    background: linear-gradient(180deg, rgba(146,140,255,1) 0%, rgba(255,255,255,1) 100%);
+
+}
 
 nav {
     font-family: 'Lato', sans-serif;
@@ -27,6 +32,7 @@ nav {
     width: 100vw;
     position: fixed;
     top: 0;
+    border-top: 7px solid #717CFF;
 }
 .nav-container {
     width: 100%;
@@ -165,6 +171,7 @@ nav {
 
 .hero-section {
     margin-top: 50px;
+    padding-top: 100px;
 }
 
 .title {
@@ -178,6 +185,7 @@ nav {
     font-family: 'Lato', sans-serif;
     font-weight: 900;
     margin-top: 50px;
+    
 }
 .sub-headline {
     font-family: 'Lato', sans-serif;
@@ -258,8 +266,11 @@ nav {
 
 .cards-section {
     width: 100vw;
-    background-color: rgb(246, 246, 246);
+    background: rgb(227,227,227);
+    background: linear-gradient(0deg, rgba(227,227,227,1) 0%, rgba(231,231,231,1) 35%, rgba(255,255,255,1) 100%);
     padding: 50px 10px;
+    
+
 }
 .cards {
     display: grid;
@@ -274,6 +285,7 @@ nav {
     position: relative;
     transition: 500ms ease;
     cursor: pointer;
+    box-shadow: 0px 0.2rem 0.75rem -.25em rgba(85, 85, 85, 0.3)
 }
 .card:hover {
     transform: scale(1.02);
@@ -296,7 +308,7 @@ nav {
     left: 0;
     height: 30%;
 }
-.card::after {
+/* .card::after {
     content: '';
     position: absolute;
     top: 0;
@@ -311,7 +323,7 @@ nav {
 .card:hover::after {
     opacity: 1;
     box-shadow: 0px 0.2rem 0.75rem -.25em rgba(0,0,0,0.3)
-}
+} */
 .head {
     font-family: 'Lato', sans-serif;
     margin: 20px 0 10px 0px;
@@ -377,6 +389,7 @@ nav {
     background-color: #fff;
     cursor: pointer;
     transition: all 250ms;
+    box-shadow: 0px 0.2rem 0.75rem -.25em rgba(85, 85, 85, 0.3)
 }
 .tile img {
     width: 100%;
@@ -422,7 +435,7 @@ nav {
 }
 .join {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .join a {
     background-color: #717cff;
@@ -580,8 +593,15 @@ footer {
 
 @media screen and (min-width: 768px) {
     .hero-section {
-        width: 75%;
-        margin: 100px auto;
+        width: 90%;
+        margin: 100px auto 0 ;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .image {
+        width: 400px;
+        height: 300px;
+        margin: auto;
     }
     .cta {
         margin-right: 1rem;
@@ -605,12 +625,16 @@ footer {
     .cards-section {
         padding: 2rem;
     }
+    .join {
+        margin-top: 50px;
+    }
 
 }
 
 @media screen and (min-width: 1000px) {
     .hero-section {
-        margin: 150px auto 150px auto;
+        
+        padding: 100px 0;
         display: grid;
         width: 90%;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -618,6 +642,7 @@ footer {
     .title {
         padding-right: 0;
         padding-left: 100px;
+        width: 80%;
     }
     .headline {
         font-size: 3rem;
@@ -662,7 +687,7 @@ footer {
     } 
     
     .join {
-        margin: 0 auto;
+        margin: 50px auto;
     }
     .calendar-tiles {
         width: 70%;
@@ -676,4 +701,13 @@ footer {
     .head p {
         font-size: 18px;
     }
+
+
+    .cards {
+        margin-bottom: 50px;
+    }
+    .card {
+        background-color: rgb(243, 243, 243);
+    }
+
 }
