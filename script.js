@@ -48,3 +48,8 @@ window.onload = () => {
 ScrollOut({
     once: true
 });
+
+const tl = gsap.timeline({defaults: {ease: "power2.inOut", duration:1.5}})
+
+tl.from('h1', {y:20, clipPath: 'inset(0 0 100% 0'});
+tl.from('p', {y:20, clipPath: 'inset(0 0 100% 0'}, '-=1.0')
